@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                *{
+                        margin:0px;
+                        padding:0px;
+                        box-sizing: border-box;
+                }
+                .container{
+                        width:100vw;
+                        height:100vh;
+                        display:flex;
+                        flex-direction:column;
+                        align-items: center;
+                        padding-top: 250px;
+                }
+                #btn{
+                        width:70px;
+                        height:25px;
+                        border-radius: 6px;
+                }
+                .innerContainer{
+                        width:142px;
+                        height:26px;
+                        display:flex;
+                        justify-content: space-between;
+                }
+        </style>
+</head>
+<body>
+        <div class="container">
+                <h1>Background-color:<span class="color" id="dai">#f5102</span></h1>
+                <div class="innerContainer">
+                        <button id="btn" onclick="Start()">Start</button>
+                        <button id="btn" onclick="Stop_Start(0)">Stop</button>
+                </div>
+                
+        </div>
+</body>
+<script type="text/javascript">
+        var i = 1;
+          var stop;
+          function Stop_Start(j){
+                console.log("hello");
+                if(j == 1){
+                        console.log(j);
+                        stop = setInterval(Color_Fliper, 1000);
+                        
+                }else{
+                        clearInterval(stop);
+
+                }
+          }
+
+          function Start(){
+                Stop_Start(1);
+          }
+
+        function Color_Fliper(){
+
+
+                const colors = ["green" ,"red","rgba(133,122,200)", "#f15025"];
+                let rendom = Math.floor(Math.random()*colors.length);
+
+                let color = document.getElementById('dai');
+                // let rendom = rendome_number();
+                console.log(colors[rendom]);
+                color.innerHTML = colors[rendom];
+                document.body.style.backgroundColor = colors[rendom];
+     
+        
+
+               /*const rendome_number = function(){
+                return Math.floor(Math.random()*colors.length);   
+               }*/
+
+               i++;
+            if(i == 5){
+                i = 1;
+            }
+        }
+
+
+
+       
+
+        // console.log(Math.random(Math.floor()*5));
+</script>
+</html>
