@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                *{
+                        margin:0px;
+                        padding:0px;
+                        box-sizing: border-box;
+                }
+                .container{
+                        width:100vw;
+                        height:100vh;
+                        display:flex;
+                        flex-direction:column;
+                        align-items: center;
+                        padding-top: 250px;
+                }
+                #btn{
+                        width:70px;
+                        height:25px;
+                        border-radius: 6px;
+                }
+        </style>
+</head>
+<body>
+        <div class="container">
+                <h1>Background-color:<span class="color" id="dai">#f5102</span></h1>
+                <button id="btn">Click</button>
+        </div>
+</body>
+<script type="text/javascript">
+        const colors = ["green" ,"red","rgba(133,122,200)", "#f15025"];
+
+        const color = document.getElementById('dai');
+        const click = document.getElementById('btn');
+        click.addEventListener('click',() => {
+
+                let rendom = rendome_number();
+                console.log(colors[rendom]);
+                color.innerHTML = colors[rendom];
+                document.body.style.backgroundColor = colors[rendom];
+        });
+        const rendome_number = function(){
+             return Math.floor(Math.random()*colors.length);   
+        }
+
+        // console.log(Math.random(Math.floor()*5));
+</script>
+</html>
